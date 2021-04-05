@@ -1,0 +1,19 @@
+:root {
+  --size: 0;
+}
+#grid {
+  width: var(--size) vh;
+  height: var(--size) vh;
+  display: grid;
+  grid-template-columns: 0;
+  justify-content: center;
+}
+.cell {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 1px solid #000;
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
