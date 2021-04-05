@@ -2,7 +2,8 @@ const grid = document.getElementById("grid");
 const size = 70;
 grid.style.setProperty("--size", size);
 //Make an n*n grid
-function makeGrid(n) {
+function makeGrid() {
+  var n = prompt("Please enter number of cells", "Number");
   grid.style.setProperty("grid-template-columns", `repeat(${n},${size / n}vh)`);
   for (let i = 0; i < n * n; i++) {
     const cell = document.createElement("div");
@@ -15,14 +16,16 @@ function makeGrid(n) {
     grid.appendChild(cell).className = "cell";
   }
 }
+const button = document.createElement("center");
 const resetBtn = document.createElement("button");
 resetBtn.onclick = () => {
   let cells = document.querySelectorAll(".cell");
   for (let i = 0; i < cells.length; i++) {
     cells[i].remove();
   }
-  makeGrid(10);
+  makeGrid();
 };
 resetBtn.appendChild(document.createTextNode("Reset"));
-document.body.appendChild(resetBtn).className = "reset";
-makeGrid(10);
+document.body.appendChild(button).className = "button";
+button.appendChild(resetBtn);
+makeGrid();
